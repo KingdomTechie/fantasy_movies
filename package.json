@@ -1,0 +1,24 @@
+{
+  "name": "first-full-stack-homework",
+  "version": "1.0.0",
+  "description": "My first full stack application!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.generalassemb.ly:keithpowell/first-full-stack-homework.git"
+  },
+  "keywords": [
+    "full-stack",
+    "beginner",
+    "Node",
+    "Express"
+  ],
+  "author": "Keith Powell kpowelltech@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
