@@ -5,7 +5,7 @@
     New - GET - /fantasyMovies/new -> Presentational Form √
     Create - POST - /fantasyMovies -> Functional √
     Show - GET - /fantasyMovies/id -> Presentational √
-    Edit - GET - /fantasyMovies/id/edit -> Presentational Form
+    Edit - GET - /fantasyMovies/id/edit -> Presentational Form √
     Update - PUT/PATCH - /fantasyMovies/id -> Functional
     Delete - DELETE - /fantasyMovies/id -> Functional √
 */
@@ -66,6 +66,7 @@ router.get("/:id", function (req, res) {
 // Edit - GET - /fantasyMovies/id/edit -> Presentational Form
 router.get("/:id/edit", function (req, res) {
     const id = req.params.id;
+
     db.fantasyMovie.findById(id, function (err, foundMovie) {
         if (err) {
             console.log(err);
@@ -77,7 +78,30 @@ router.get("/:id/edit", function (req, res) {
         }
     });
         
-});       
+});
+
+// Update - PUT/PATCH - /fantasyMovies/id -> Functional
+router.put("/:id", function (req, res) {
+    const id = req.params.id;
+    db.fantasyMovie.findByIdAndUpdate(
+        id,
+        {
+            $set: {
+                name: req.body.name,
+                director: req.body.director,
+            }
+        },
+        {new: true},
+        function (err, updatedMovie) {
+            if (err) {
+                console.log(err);
+            } else {
+                return res.redirect(`/fantasyMovies/${updatedMovie._id}`)
+            }
+        }
+    )
+    
+})
 
 // Delete - DELETE - /fantasyMovies/id -> Functional
 router.delete("/:id", function (req, res) {
@@ -88,6 +112,7 @@ router.delete("/:id", function (req, res) {
             console.log(deletedMovie);
         }
     )
+    res.redirect("/fantasyMovies")
 })
 
 module.exports = router;

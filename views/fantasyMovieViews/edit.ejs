@@ -8,10 +8,12 @@
 </head>
 <body>
     <h1>Edit: <%=movie.name%> </h1>
+    <h1>Edit: <%=movie.director%></h1>
 
-    <form action="">
-        <input type="text" name="name" placeholder="Edit name of movie">
-        <input type="text" name="director" placeholder="Edit name of director">
+    <form action="/fantasyMovies/<%=movie._id%>?_method=PUT" method="POST">
+
+        <input type="text" name="name" value="<%=movie.name%>">
+        <input type="text" name="director" value="<%=movie.director%>">
         <input type="submit" value="Edit">
 
     </form><br>
