@@ -9,7 +9,19 @@
 <body>
     <h1>This is where all your Fantasy Movies live</h1>
 
-    <a href="/">Home</a><br>
-    <a href="/fantasyMovies/new">Add a new Movie</a>
+    <% if (!allmovies.length) { %>
+        <p>No movies added yet</p>
+   <% } %>
+
+   <ul>
+    <% allmovies.forEach((movie, index) => { %>
+       <li>
+           <%= movie.name %>
+
+          <% }); %>
+       </li>
+   </ul>
+   <a href="/">Home</a><br>
+   <a href="/fantasyMovies/new">Add a new Movie</a>
 </body>
 </html>

@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
 
-const fantasyMovieSchema = new mongoose.Schema(
+const movieSchema = new mongoose.Schema(
     {
         name: {type: String, required: true, minLength: 1},
         director: {type: String, required: false, minLength: 1},
     },
-    {timestamps: true}
-)
+);
 
-const FantasyMovie = mongoose.model("FantasyMovie", fantasyMovieSchema)
+const FantasyMovie = mongoose.model("FantasyMovie", movieSchema)
 
 module.exports = FantasyMovie;

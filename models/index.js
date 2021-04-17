@@ -22,5 +22,5 @@ mongoose.connection.on("err", function () {
 });
 
 module.exports = {
-    fantasyMov: require("./FantasyMovie")
+    fantasyMovie: require("./FantasyMovie")
 }

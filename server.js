@@ -26,14 +26,15 @@ const PORT = 4000
 app.set("view engine", "ejs")
 
 // Middleware
+app.use(express.urlencoded({ extended: true}));
 
 // Controllers
 app.use("/fantasyMovies", controllers.fantasyRoute)
-// Homepage
 
+// Homepage
 app.get("/", function (req, res) {
   res.render("home")
-})
+});
 
 // Server Bind
 app.listen(PORT, () => {console.log("Server up and running!")})
