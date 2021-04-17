@@ -3,7 +3,7 @@
   Restful Routes
     Index - GET - /fantasyMovies -> Presentational √
     New - GET - /fantasyMovies/new -> Presentational Form √
-    Create - POST - /fantasyMovies -> Functional
+    Create - POST - /fantasyMovies -> Functional √
     Show - GET - /fantasyMovies/id -> Presentational
     Edit - GET - /fantasyMovies/id/edit -> Presentational Form
     Update - PUT/PATCH - /fantasyMovies/id -> Functional
@@ -29,7 +29,10 @@ router.post("/", function (req, res) {
     res.send("Data has been recieved");
 })
 
-
+// Show - GET - /fantasyMovies/id -> Presentational
+router.get("/:id", function (req, res) {
+    res.render("fantasyMovieViews/show")
+})
 
 
 module.exports = router;
