@@ -7,7 +7,7 @@
     <title>Fantasy Movies</title>
 </head>
 <body>
-    <h1>This is where all your Fantasy Movies live</h1>
+    <h1>My Favorite Fantasy Movies</h1>
 
     <% if (!allmovies.length) { %>
         <p>No movies added yet</p>
@@ -16,8 +16,7 @@
    <ul>
     <% allmovies.forEach((movie, index) => { %>
        <li>
-           <%= movie.name %>
-
+           <a href="/fantasyMovies/<%=movie._id%>"><%= movie.name %></a>
           <% }); %>
        </li>
    </ul>
