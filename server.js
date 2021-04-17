@@ -32,12 +32,17 @@ const app = express();
 const PORT = 4000
 
 // App Configuration
-
+app.set("view engine", "ejs")
 // Middleware
 
 // Controllers
 
 // Homepage
+
+app.get("/", function (req, res) {
+  console.log("I'm the homepage");
+  res.render("home")
+})
 
 // Server Bind
 app.listen(PORT, () => {console.log("Server up and running!")})
