@@ -1,14 +1,4 @@
-//TODO - Use all 7 RESTful routes
-/* 
-  Restful Routes
-    Index - GET - /fruits -> Presentational
-    New - GET - /fruits/new -> Presentational Form
-    Create - POST - /fruits -> Functional
-    Show - GET - /fruits/id -> Presentational
-    Edit - GET - /fruits/id/edit -> Presentational Form
-    Update - PUT/PATCH - /fruits/id -> Functional
-    Delete - DELETE - /fruits/id -> Functional
-*/
+
 //TODO - Have full CRUD functionality
 /* 
   CRUD Functionality
@@ -24,6 +14,7 @@ const express = require("express");
 
 // Internal Modules
 const db = require("./models")
+const controllers = require("./controllers")
 
 // Instanced Modules
 const app = express();
@@ -33,14 +24,14 @@ const PORT = 4000
 
 // App Configuration
 app.set("view engine", "ejs")
+
 // Middleware
 
 // Controllers
-
+app.use("/fantasyMovies", controllers.fantasyRoute)
 // Homepage
 
 app.get("/", function (req, res) {
-  console.log("I'm the homepage");
   res.render("home")
 })
 
