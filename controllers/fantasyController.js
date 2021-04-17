@@ -2,7 +2,7 @@
 /* 
   Restful Routes
     Index - GET - /fantasyMovies -> Presentational √
-    New - GET - /fantasyMovies/new -> Presentational Form 
+    New - GET - /fantasyMovies/new -> Presentational Form √
     Create - POST - /fantasyMovies -> Functional
     Show - GET - /fantasyMovies/id -> Presentational
     Edit - GET - /fantasyMovies/id/edit -> Presentational Form
@@ -23,6 +23,12 @@ router.get("/", function (req, res) {
 router.get("/new", function (req, res) {
     res.render("fantasyMovieViews/new.ejs")
 })
+
+// Create - POST - /fantasyMovies -> Functional
+router.post("/", function (req, res) {
+    res.send("Data has been recieved");
+})
+
 
 
 
