@@ -7,7 +7,7 @@
     Show - GET - /fantasyMovies/id -> Presentational √
     Edit - GET - /fantasyMovies/id/edit -> Presentational Form
     Update - PUT/PATCH - /fantasyMovies/id -> Functional
-    Delete - DELETE - /fantasyMovies/id -> Functional
+    Delete - DELETE - /fantasyMovies/id -> Functional √
 */
 
 const express = require("express");
@@ -64,10 +64,20 @@ router.get("/:id", function (req, res) {
 });
 
 // Edit - GET - /fantasyMovies/id/edit -> Presentational Form
-
 router.get("/:id/edit", function (req, res) {
+    const id = req.params.id;
+    db.fantasyMovie.findById(id, function (err, foundMovie) {
+        if (err) {
+            console.log(err);
+            return res.send("Server error");
+        } else {
+            const context = {movie: foundMovie};
 
-})
+            return res.render("fantasyMovieViews/edit", context);
+        }
+    });
+        
+});       
 
 // Delete - DELETE - /fantasyMovies/id -> Functional
 router.delete("/:id", function (req, res) {
