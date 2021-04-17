@@ -22,13 +22,14 @@
 // External Modules
 const express = require("express");
 
-const app = express();
-
 // Internal Modules
+const db = require("./models")
 
 // Instanced Modules
+const app = express();
 
 // Configuration Variables
+const PORT = 4000
 
 // App Configuration
 
@@ -37,6 +38,9 @@ const app = express();
 // Controllers
 
 // Homepage
+
+// Server Bind
+app.listen(PORT, () => {console.log("Server up and running!")})
 
 
 
