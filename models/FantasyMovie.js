@@ -4,6 +4,7 @@ const movieSchema = new mongoose.Schema(
     {
         name: {type: String, required: true, minLength: 1},
         director: {type: String, required: false,},
+        imgURL: {type: String, required: false}
     },
 );
 

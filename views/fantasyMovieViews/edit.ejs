@@ -12,8 +12,9 @@
 
     <form action="/fantasyMovies/<%=movie._id%>?_method=PUT" method="POST">
 
-        <input type="text" name="name" value="<%=movie.name%>">
-        <input type="text" name="director" value="<%=movie.director%>">
+        <input type="text" name="name" value="<%=movie.name%>" placeholder="Movie name">
+        <input type="text" name="director" value="<%=movie.director%>" placeholder="Director">
+        <input type="text" name="imgURL" placeholder="image URL">
         <input type="submit" value="Edit">
 
     </form><br>

@@ -9,6 +9,7 @@
 <body>
     <h1>Title: <%=oneMovie.name%></h1>
     <h1>Director: <%=oneMovie.director%></h1>
+    <img src=<%=oneMovie.imgURL%> style="max-width: 300px"><br><br>
 
     <form action="/fantasyMovies/<%=oneMovie._id%>?_method=DELETE" method="POST">
     <input type="submit" value="Delete this movie">
@@ -16,7 +17,8 @@
 
     <a href="/fantasyMovies/<%=oneMovie._id%>/edit">Edit this movie</a><br><br>
     <a href="/">Home</a><br><br>
-    <a href="/fantasyMovies">Back to Movies</a>
+    <a href="/fantasyMovies">Back to Movies</a><br><br>
+    <a href="/fantasyMovies/new">Add a movie</a>
 
 </body>
 </html>
