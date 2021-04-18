@@ -42,7 +42,7 @@ router.post("/", function (req, res) {
             return res.send("Sever error :(");
         } else {
             console.log("created Movie", createdMovie);
-            return res.redirect("/fantasyMovies")
+            return res.redirect(`/fantasyMovies/${createdMovie._id}`)
         }
     });
 });
@@ -56,6 +56,7 @@ router.get("/:id", function (req, res) {
             console.log(err);
             return res.send("Server error");
         } else {
+            
             const context = {oneMovie: foundMovie};
 
             return res.render("fantasyMovieViews/show", context)
