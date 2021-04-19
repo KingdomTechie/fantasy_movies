@@ -1,0 +1,7 @@
+body {
+    display: flex
+}
+
+.index-photos {
+    max-width: 200px;
+}
