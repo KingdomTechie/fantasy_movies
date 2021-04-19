@@ -1,7 +1,14 @@
 body {
-    display: flex
+   
+    position: relataive
+    
 }
 
-.index-photos {
+.container{
+    display: inline-flex,
+    
+}
+
+.item {
     max-width: 200px;
 }
