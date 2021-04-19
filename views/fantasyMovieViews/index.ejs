@@ -5,12 +5,12 @@
 <body>
     <h1>Fantasy Movie Database</h1>
 
-    <% if (!allmovies.length) { %>
+    <% if (!movies.length) { %>
         <p>No movies added yet</p>
    <% } %>
 
    <ul>
-    <% allmovies.forEach((movie, index) => { %>
+    <% movies.forEach((movie, index) => { %>
        <li>
            <a href="/fantasyMovies/<%=movie._id%>"><%= movie.name %></a>
           <% }); %>

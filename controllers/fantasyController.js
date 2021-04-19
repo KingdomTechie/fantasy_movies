@@ -17,12 +17,15 @@ const db = require("../models");
 
 // Index - GET - /fantasyMovies -> Presentational
 router.get("/", function (req, res) {
+    const database = db.fantasyMovie;
+    console.log(database);
     db.fantasyMovie.find({}, function (err, allMovies) {
         if (err) {
             console.log(err);
             return res.send("Server error!");
         } else {
-            const context = {allmovies: allMovies};
+            const context = {movies: allMovies};
+            
             return res.render("fantasyMovieViews/index", context)
         }
     });

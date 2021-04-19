@@ -6,7 +6,7 @@
     <img src=<%=oneMovie.imgURL%> style="max-width: 300px"><br><br>
 
     <form action="/fantasyMovies/<%=oneMovie._id%>?_method=DELETE" method="POST">
-    <input type="submit" value="Delete this movie">
+    <input type="submit" class="btn btn-danger" value="Delete this movie">
     </form><br>
 
     <a href="/fantasyMovies/<%=oneMovie._id%>/edit">Edit this movie</a><br><br>

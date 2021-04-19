@@ -7,10 +7,10 @@
 
     <form action="/fantasyMovies/<%=movie._id%>?_method=PUT" method="POST">
 
-        <input type="text" name="name" value="<%=movie.name%>" placeholder="Movie name">
-        <input type="text" name="director" value="<%=movie.director%>" placeholder="Director">
-        <input type="text" name="imgURL" placeholder="image URL">
-        <input type="submit" value="Edit">
+        Name: &nbsp &nbsp &nbsp &nbsp &nbsp<input type="text" name="name" value="<%=movie.name%>" placeholder="Movie name"><br><br>
+        Director: &nbsp &nbsp &nbsp <input type="text" name="director" value="<%=movie.director%>" placeholder="Director"><br><br>
+        Image URL: &nbsp <input type="text" name="imgURL" placeholder="image URL"><br><br>
+        <input type="submit" class="btn btn-primary" value="Edit">
 
     </form><br>
 
