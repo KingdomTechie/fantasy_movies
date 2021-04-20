@@ -1,14 +1,22 @@
 body {
-   
+   background-color: black;
     position: relataive
-    
+}
+
+h1 {
+    margin-left: 600px;
+    color: white;
 }
 
 .container{
-    display: inline-flex,
+    display: inline-flexbox;
+    justify-content: center;
+    align-content: space-around;
+    
     
 }
 
 .item {
     max-width: 200px;
+    
 }

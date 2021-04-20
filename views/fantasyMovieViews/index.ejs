@@ -22,14 +22,18 @@
         <p>No movies added yet</p>
    <% } %>
 
+   <nav>
+    <a href="/">Home</a><br><br>
+    <a href="/fantasyMovies/new">Add a new Movie</a>
+   </nav>
+   
    <div class="container">
     <% movies.forEach((movie, index) => { %>
            <a href="/fantasyMovies/<%=movie._id%>"><img src="<%= movie.imgURL %>" class="item"></a>
           <% }); %>
         </div>
   
-   <a href="/">Home</a><br><br>
-   <a href="/fantasyMovies/new">Add a new Movie</a>
+   
 
 
 <!--  
