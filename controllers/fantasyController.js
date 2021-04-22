@@ -29,6 +29,8 @@ router.get("/", function (req, res) {
             return res.render("fantasyMovieViews/index", context)
         }
     });
+
+    
 });
 
 // New - GET - /fantasyMovies/new -> Presentational Form 
