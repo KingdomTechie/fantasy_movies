@@ -16,7 +16,9 @@ const db = require("../models");
 
 
 // Index - GET - /fantasyMovies -> Presentational
-router.get("/", function (req, res) {
+
+router.get("/", async function (req, res) {
+/*
     const database = db.fantasyMovie;
     console.log(database);
     db.fantasyMovie.find({}, function (err, allMovies) {
@@ -29,8 +31,17 @@ router.get("/", function (req, res) {
             return res.render("fantasyMovieViews/index", context)
         }
     });
+*/
+    try {
+        const allMovies = await db.fantasyMovie.find({})
+        const context = {movies: allMovies}
 
-    
+        return res.render("fantasyMovieViews/index", context)
+
+    } catch(err) {
+        console.log(err);
+        return res.send(err);
+    }
 });
 
 // New - GET - /fantasyMovies/new -> Presentational Form 
@@ -39,8 +50,8 @@ router.get("/new", function (req, res) {
 })
 
 // Create - POST - /fantasyMovies -> Functional
-router.post("/", function (req, res) {
-    console.log(db.fantasyMovie);
+router.post("/", async function (req, res) {
+    /*
     db.fantasyMovie.create(req.body, function (err, createdMovie) {
         if (err) {
             console.log(err);
@@ -49,7 +60,18 @@ router.post("/", function (req, res) {
             console.log("created Movie", createdMovie);
             return res.redirect(`/fantasyMovies/${createdMovie._id}`)
         }
+        
     });
+    */
+    try {
+        const reqBody = await db.fantasyMovie.create(req.body)
+
+    } catch (err) {
+        console.log(err);
+        return res.send(err);
+    }
+    
+    
 });
 
 // Show - GET - /fantasyMovies/id -> Presentational
