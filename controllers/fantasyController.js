@@ -65,6 +65,8 @@ router.post("/", async function (req, res) {
     */
     try {
         const reqBody = await db.fantasyMovie.create(req.body)
+    
+        return res.redirect(`/fantasyMovies/${reqBody._id}`)
 
     } catch (err) {
         console.log(err);
