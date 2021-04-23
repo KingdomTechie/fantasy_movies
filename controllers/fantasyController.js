@@ -72,12 +72,12 @@ router.post("/", async function (req, res) {
         console.log(err);
         return res.send(err);
     }
-    
-    
 });
 
 // Show - GET - /fantasyMovies/id -> Presentational
-router.get("/:id", function (req, res) {
+router.get("/:id", async function (req, res) {
+
+    /*
     const id = req.params.id;
 
     db.fantasyMovie.findById(id, function (err, foundMovie) {
@@ -91,6 +91,19 @@ router.get("/:id", function (req, res) {
             return res.render("fantasyMovieViews/show", context)
         }
     });
+    */
+
+    try {
+        const id = req.params.id;
+
+        const foundMovie = await db.fantasyMovie.findById(id)
+        const context = {oneMovie: foundMovie}
+
+        return res.render("fantasyMovieViews/show", context)
+    } catch(err) {
+        console.log(err);
+        return res.send(err)
+    }
 });
 
 // Edit - GET - /fantasyMovies/id/edit -> Presentational Form
