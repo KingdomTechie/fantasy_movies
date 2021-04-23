@@ -14,6 +14,7 @@ const express = require("express");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+const bcrypt = require("bcryptjs");
 
 // Internal Modules
 const db = require("./models")
@@ -58,6 +59,7 @@ app.use(function (req, res, next) {
 
 // Controllers
 app.use("/fantasyMovies", controllers.fantasyRoute)
+app.use("/", controllers.authRoute)
 
 // Homepage
 app.get("/", function (req, res) {
@@ -65,6 +67,8 @@ app.get("/", function (req, res) {
   // console.log(req.session);
   res.render("home")
 });
+
+
 
 // Server Bind
 app.listen(PORT, () => {console.log("Server up and running!")})
